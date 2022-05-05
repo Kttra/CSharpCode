@@ -1,13 +1,5 @@
-# CSharpTips
-C# info
-
-**Projects**
-------------
-[Regex Patterns](https://github.com/Kttra/RegexPatterns)
-
-[Random String/Num Generator](https://github.com/Kttra/RandomStringGenerator/blob/main/randomStringGenerator.cs)
-
-[Input Validation](https://github.com/Kttra/ValidInput/blob/main/validInput.cs)
+# C# Code
+A compilation of C# code to quickly reference to while making .NET applications.
 
 **Command Prompt**
 -----------------
@@ -277,3 +269,11 @@ else
   MessageBox.Show("Invalid file path", "Error");
 }
 ```
+
+**Projects**
+------------
+[Regex Patterns](https://github.com/Kttra/RegexPatterns) - Details on regex expressions and patterns.
+
+[Random String/Num Generator](https://github.com/Kttra/RandomStringGenerator/blob/main/randomStringGenerator.cs) - Code to quickly generate random strings or numbers.
+
+[Input Validation](https://github.com/Kttra/ValidInput/blob/main/validInput.cs) - Code to check for valid input.
