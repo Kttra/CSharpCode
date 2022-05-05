@@ -1,66 +1,6 @@
 # C# Code
 A compilation of C# code to quickly reference to while making .NET applications.
 
-**Command Prompt**
------------------
-Run command prompt commands through a hidden console
-```csharp
-using System.Diagnostics;
-var proc1 = new ProcessStartInfo();
-string aCommand = "shutdown -s -f -t " + time;
-proc1.UseShellExecute = true;
-proc1.WorkingDirectory = @"C:\Windows\System32";
-proc1.FileName = @"C:\Windows\System32\cmd.exe";
-proc1.Verb = "runas"; //behave as if the process has been started from Explorer with the "Run as Administrator" menu command
-proc1.Arguments = "/c " + aCommand; //"/c" tells the prompt to run and terminate afterwards
-proc1.WindowStyle = ProcessWindowStyle.Hidden;
-Process.Start(proc1);
-```
-
-**Json Files in C#**
------------------------------------
-There are multiple ways to access and write information from and to a json file. The below code goes over two different ways.
-```csharp
-string fileName = @"d:\Users\Username\Desktop\sampleAB2.json";
-if (File.Exists(fileName))
-{
-  var jsonObject = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(fileName));
-  int rotation = jsonObject["Rotation"];
-  
-  //Writing a file
-  var settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
-  var text = JsonConvert.SerializeObject(jsonObject, Formatting.Indented);
-  File.WriteAllText(@"d:\Users\Username\Desktop\sampleAB2.json", text);
-
-  //If you want to assign the json to class instead, then you can call the value like this: jsonObject.Step1.classUsed[0]
-  /*
-  var jsonObjectEdit = JsonConvert.DeserializeObject<JsonValues>(File.ReadAllText(fileName));
-  					    
-  //System.Text.Json Serialize Method
-  var options = new JsonSerializerOptions {WriteIndented = true};
-  string jsonString = System.Text.Json.JsonSerializer.Serialize(jsonObjectEdit, options);
-  Console.WriteLine(jsonString);
-  File.WriteAllText(@"d:\Users\Username\Desktop\sampleAB2.json", jsonString);
-  */
-}
-```
-
-**Grid and Cell Values**
------------------------------------
-You can assign the cell values manually and also add in rows throughout the program.
-
-```csharp
-//Add a row
-dataGridView1.Rows.Add("Row Name");
-
-//Assigning row 8, cell 0 a value
-dataGridView1.Rows[8].Cells[0].Value = "Row Name";
-dataGridView1[8, 0].Value = "Row Name";
-
-//Clear the grid
-dataGridView1.Rows.Clear();
-```
-
 **Form Controls, Labels, Textboxes**
 ------------------------------------
 We can assign and change the form controls on the go without needing to create a list.
@@ -268,6 +208,66 @@ else
 {
   MessageBox.Show("Invalid file path", "Error");
 }
+```
+
+**Command Prompt**
+-----------------
+Run command prompt commands through a hidden console
+```csharp
+using System.Diagnostics;
+var proc1 = new ProcessStartInfo();
+string aCommand = "shutdown -s -f -t " + time;
+proc1.UseShellExecute = true;
+proc1.WorkingDirectory = @"C:\Windows\System32";
+proc1.FileName = @"C:\Windows\System32\cmd.exe";
+proc1.Verb = "runas"; //behave as if the process has been started from Explorer with the "Run as Administrator" menu command
+proc1.Arguments = "/c " + aCommand; //"/c" tells the prompt to run and terminate afterwards
+proc1.WindowStyle = ProcessWindowStyle.Hidden;
+Process.Start(proc1);
+```
+
+**Json Files in C#**
+-----------------------------------
+There are multiple ways to access and write information from and to a json file. The below code goes over two different ways.
+```csharp
+string fileName = @"d:\Users\Username\Desktop\sampleAB2.json";
+if (File.Exists(fileName))
+{
+  var jsonObject = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(fileName));
+  int rotation = jsonObject["Rotation"];
+  
+  //Writing a file
+  var settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
+  var text = JsonConvert.SerializeObject(jsonObject, Formatting.Indented);
+  File.WriteAllText(@"d:\Users\Username\Desktop\sampleAB2.json", text);
+
+  //If you want to assign the json to class instead, then you can call the value like this: jsonObject.Step1.classUsed[0]
+  /*
+  var jsonObjectEdit = JsonConvert.DeserializeObject<JsonValues>(File.ReadAllText(fileName));
+  					    
+  //System.Text.Json Serialize Method
+  var options = new JsonSerializerOptions {WriteIndented = true};
+  string jsonString = System.Text.Json.JsonSerializer.Serialize(jsonObjectEdit, options);
+  Console.WriteLine(jsonString);
+  File.WriteAllText(@"d:\Users\Username\Desktop\sampleAB2.json", jsonString);
+  */
+}
+```
+
+**Grid and Cell Values**
+-----------------------------------
+You can assign the cell values manually and also add in rows throughout the program.
+
+```csharp
+//Add a row
+dataGridView1.Rows.Add("Row Name");
+
+//Assigning row 8, cell 0 a value
+dataGridView1.Rows[8].Cells[0].Value = "Row Name";
+dataGridView1[8, 0].Value = "Row Name";
+
+//Clear the grid
+dataGridView1.Rows.Clear();
 ```
 
 **Projects**
