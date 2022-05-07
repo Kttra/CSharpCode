@@ -1,5 +1,5 @@
 # C# Code
-A compilation of C# code to quickly reference to while making .NET applications.
+A compilation of C# code to quickly reference to while making C# applications.
 
 **Form Controls, Labels, Textboxes**
 ------------------------------------
