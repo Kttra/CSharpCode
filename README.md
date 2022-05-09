@@ -277,3 +277,5 @@ dataGridView1.Rows.Clear();
 [Random String/Num Generator](https://github.com/Kttra/RandomStringGenerator/blob/main/randomStringGenerator.cs) - Code to quickly generate random strings or numbers.
 
 [Input Validation](https://github.com/Kttra/ValidInput/blob/main/validInput.cs) - Code to check for valid input.
+
+[Json](https://github.com/Kttra/JsonGridLoader) - Project that reads and write to json files.
