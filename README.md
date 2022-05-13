@@ -348,7 +348,7 @@ class Program
 }  
 ```
 
-Dynamic / Runtime Polymorphism
+Dynamic/Runtime Polymorphism
 
 ```charp
 public class Drawing  
@@ -416,6 +416,37 @@ class Program
 	}  
 }  
 
+```
+
+Overloading – method with same names and different signatures
+
+Overriding – using a virtual keyword and overriding in child class
+
+```csharp
+public class Employee{
+	public string name {get;set;}
+	public string address {get;set;}
+	public virtual void Validate(){
+		CheckName();
+		CheckAddress();
+	}
+	private void CheckName(){
+	}
+	private void CheckAdress(){
+	}
+public class Manager : Employee{
+	public void Management(){
+	}
+	public override void Validate(){
+	}
+	public void Validate(bool strict)
+	{
+
+	}
+	public void Validate(bool strict, int num1)
+	{
+	} 
+}
 ```
 
 **Ref vs out**
