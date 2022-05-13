@@ -449,6 +449,19 @@ public class Manager : Employee{
 }
 ```
 
+**Struct**
+------------------
+A structure is a data type of a value type. A struct keyword is used when you are going to define a structure. Struct type is Private by default.
+
+Although both class and structure are user-defined data types, they are different in several fundamental ways. A class is a reference type and stores on the heap. Struct, on the other hand, is a value type and is, therefore, stored on the stack. While the structure doesn’t support inheritance and polymorphism, the class provides support for both.
+
+```csharp
+struct MyStruct{
+	public int Prop1 {get; set;}
+	public int Prop2 {get; set;}
+}
+```
+
 **Ref vs out**
 -----------------------
 The **ref** keyword passes arguments by reference. It means any changes made to this argument in the method will be reflected in that variable when control returns to the calling method.
@@ -496,6 +509,79 @@ static void Main(string[] args)
 The out and ref keywords are useful when we want to return a value in the same variables that are passed as an argument. Ref tells the compiler that the object is initialized before entering the function, while out tells the compiler that the object will be initialized inside the function.
 
 So while ref is two-ways, out is out-only.
+
+**Const vs Readonly**
+-----------------
+Const needs to be initialized while readonly can be assigned later on. However, both cannot be changed afterwards.
+
+```csharp
+public readonly int myVal;
+public const int myVal2 = 1;
+```
+
+**String Builder**
+-----------------
+In C#, strings are immutable. To solve the problem, C# introduces the StringBuilder in the System.Text namespace. StringBuilder does not create a new object in memory, instead it dynamically expands memory to accomodate the modified string.
+
+```csharp
+StringBuilder sb = new StringBuilder(); //string will be appended later
+//or
+StringBuilder sb = new StringBuilder("Hello World!");
+sb.Append(" Hi there");
+sb.AppendLine("Hello C#")
+//AppendFormat
+StringBuilder sbAmout = new StringBuilder("Your total amount is ");
+sbAmout.AppendFormat("{0} ", 25);
+Console.WriteLine(sbAmout); //output: Your total amount is 25
+//Insert
+StringBuilder sb = new StringBuilder("Hello World!");
+sb.Insert(5," C#"); 
+Console.WriteLine(sb); //output: Hello C# World!
+//Remove, start at index 5, then length 7
+StringBuilder sb = new StringBuilder("Hello World!");
+sb.Remove(5, 7);
+Console.WriteLine(sb); //output: Hello
+//Replace
+StringBuilder sb = new StringBuilder("Hello World!");
+sb.Replace("World", "C#");
+Console.WriteLine(sb);//output: Hello C#!
+```
+
+**Boxing & Unboxing**
+----------------
+**Boxing** - is a process of converting a value type to an object type where value type is placed on the stack memory, and the object type is placed in the heap memory. This conversion is an implicit conversion and you can directly assign any value to an object, and C# will handle the rest of the conversion on its own.
+```csharp
+Int a=111;
+Object b=a;
+```
+**Unboxing** - it is the reverse process of the boxing process. It is a conversion of the object type to the value type and the value of the boxed object type placed on the heap memory which will be transferred to the value type which is placed on the stack. This conversion of the unboxing process has to be done explicitly.
+```csharp
+Object b=111;
+Int a=(int)b;
+```
+**Enum**
+--------------
+An enum is a special "class" that represents a group of constants (unchangeable/read-only variables).'
+
+```csharp
+enum Day {Sat, Sun, Mon, Tue, Wed, Thu, Fri};
+//Access Sun by Day.Sun, would give the value 1
+```
+**Delegates**
+--------------
+A delegate is an object which refers to a method or you can say it is a reference type variable that can hold a reference to the methods
+
+```csharp
+public delegate void Print(int value);
+public static void Main()
+{	
+	Print printDel = PrintNum;
+	printDel(50);
+}
+public static void PrintNum(int num){
+	Console.WriteLine(num);
+}
+```
 
 **Form Controls, Labels, Textboxes**
 ------------------------------------
