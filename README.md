@@ -43,7 +43,7 @@ phrase.ToUpper(); //Converts to uppercase
 phrase.Contains(“Academy”); //Returns True
 phrase[0]; //Returns A
 phrase.Indexof(“Academy”); //Returns 0
-phrase.Substring(0, 3); //Returns Aca
+phrase.Substring(0, 3); //Returns Aca, index 0, length 3
 ```
 
 **Conversion**
