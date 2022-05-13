@@ -12,7 +12,10 @@ int num = 10;
 Console.WriteLine($"{num}");
 
 Console.Write(“Enter your name: ”); //Doesn’t create newline
-string name = Console.ReadLine();
+
+
+
+name = Console.ReadLine();
 Console.WriteLine(“Hello, ” + name);
 ```
 
@@ -70,6 +73,15 @@ public static int getInt()
 
     return num;
 }
+```
+**Char to int**
+This works because each character is internally represented by a number. The characters '0' to '9' are represented by consecutive numbers, so finding the difference between the characters '0' and '2' results in the number 2.
+
+```csharp
+char foo = '2';
+int bar = foo - '0';
+//or natively
+bar = char.GetNumericValue(foo);
 ```
 
 **Arrays**
