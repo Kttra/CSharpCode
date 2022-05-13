@@ -52,6 +52,26 @@ int num = Convert.ToInt32("45");
 double num = Convert.ToDouble("45.12")
 ```
 
+Try Parse example
+
+```csharp
+//Get an integer input, can rewrite for double, bool, float, char
+public static int getInt()
+{
+    Console.Write("Input a number: ");
+    string input = Console.ReadLine();
+
+    int num;
+    while (!int.TryParse(input, out num))
+    {
+	Console.Write("Invalid! Try again: ");
+	input = Console.ReadLine();
+    }
+
+    return num;
+}
+```
+
 **Arrays**
 -------------
 Example of different types of arrays (1D, 2D, 3D).
@@ -146,11 +166,11 @@ Try and catch block example.
 ```csharp
 try{
 	Console.WriteLine(“Enter a number: ”);
-    int num1 = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine(“Enter another number: ”);
-    int num2 = Convert.ToInt32(Console.ReadLine());
+    	int num1 = Convert.ToInt32(Console.ReadLine());
+   	 Console.WriteLine(“Enter another number: ”);
+    	int num2 = Convert.ToInt32(Console.ReadLine());
 
-    Console.WriteLine(num1/num2);
+   	 Console.WriteLine(num1/num2);
 }
 catch(DivideByZeroException e){
 	Console.WriteLine(e.Message);
@@ -229,6 +249,54 @@ List<List<String>> strList = new List<List<String>>{
     new List<String> {String.Empty, String.Empty},
 };
 ```
+
+**Ref vs out**
+-----------------------
+The **ref** keyword passes arguments by reference. It means any changes made to this argument in the method will be reflected in that variable when control returns to the calling method.
+
+```csharp
+public static string GetNextName(ref int id)
+{
+    string returnText = "Next-" + id.ToString();
+    id += 1;
+    return returnText;
+}
+static void Main(string[] args)
+{
+    int i = 1;
+    Console.WriteLine("Previous value of integer i:" + i.ToString());
+    string test = GetNextName(ref i);
+    Console.WriteLine("Current value of integer i:" + i.ToString());
+}
+/*	Output:
+	Previous value of integer i:1
+	Current value of integer i:2
+*/
+```
+
+The **out** keyword passes arguments by reference. This is very similar to the ref keyword.
+```csharp
+public static string GetNextNameByOut(out int id)
+{
+    id = 1;
+    string returnText = "Next-" + id.ToString();
+    return returnText;
+}
+static void Main(string[] args)
+{
+    int i = 0;
+    Console.WriteLine("Previous value of integer i:" + i.ToString());
+    string test = GetNextNameByOut(out i);
+    Console.WriteLine("Current value of integer i:" + i.ToString());
+}
+/*	Output:
+	Previous value of integer i:0
+	Current value of integer i:1
+*/
+```
+The out and ref keywords are useful when we want to return a value in the same variables that are passed as an argument. Ref tells the compiler that the object is initialized before entering the function, while out tells the compiler that the object will be initialized inside the function.
+
+So while ref is two-ways, out is out-only.
 
 **Form Controls, Labels, Textboxes**
 ------------------------------------
@@ -506,6 +574,6 @@ dataGridView1.Rows.Clear();
 
 [Random String/Num Generator](https://github.com/Kttra/RandomStringGenerator/blob/main/randomStringGenerator.cs) - Code to quickly generate random strings or numbers.
 
-[Input Validation](https://github.com/Kttra/ValidInput/blob/main/validInput.cs) - Code to check for valid input.
+[Input Validation](https://github.com/Kttra/ValidInput/blob/main/validInput.cs) - Code to check for valid input. Also includes examples of parsing and only allowing for specific input.
 
 [Json](https://github.com/Kttra/JsonGridLoader) - Project that reads and write to json files.
