@@ -1,6 +1,235 @@
 # C# Code
 A compilation of C# code to quickly reference to while making C# applications.
 
+**Printing & Getting Userinput**
+--------------
+Print to console and get userinput
+
+```csharp
+Console.WriteLine("Hello World");
+//Print value
+int num = 10;
+Console.WriteLine($"{num}");
+
+Console.Write(“Enter your name: ”); //Doesn’t create newline
+string name = Console.ReadLine();
+Console.WriteLine(“Hello, ” + name);
+```
+
+**Variables**
+--------------
+Data types in C#
+
+```csharp
+string characterName = “John”;
+int characterAge = 35;
+Console.WriteLine("There was a man named " + characterName);
+char grade = ‘A’;
+//float, double, decimal
+bool isMale = true;
+```
+
+**Strings**
+--------------
+Common string commands
+
+```csharp
+string phrase = “Academy”
+phrase.Length; //Gives length
+phrase.ToUpper(); //Converts to uppercase
+phrase.Contains(“Academy”); //Returns True
+phrase[0]; //Returns A
+phrase.Indexof(“Academy”); //Returns 0
+phrase.Substring(0, 3); //Returns Aca
+```
+
+**Conversion**
+----------------
+Convert strings to integer/double
+
+```csharp
+int num = Convert.ToInt32("45");
+double num = Convert.ToDouble("45.12")
+```
+
+**Arrays**
+-------------
+Example of different types of arrays (1D, 2D, 3D).
+
+```csharp
+int[] LuckyNumbers = {4, 8, 15, 16, 23, 42};
+LuckyNumbers[0]; //4
+LuckyNumbers[1] = 7;
+LuckyNumbers.length();
+string[] friends = new string[5];
+friends[0] = “Jim”;
+
+int[,] numberGrid = {
+	{1, 2},
+	{3, 4},
+	{5, 6}
+};
+Console.WriteLine(numberGrid[1][1]); //4
+int[,] myArray = new int[2,3]; //2 rows, 3 columns
+int[,,] array1 = new int[4, 2, 3]; //D1=4, D2=2, D3=3
+
+```
+
+**If Statements**
+--------------
+Example of an if statement
+
+```csharp
+bool isMale = true;
+bool isTall = true;
+if(isMale && isTall){
+	Console.WriteLine(“You are a tall male”);
+}
+else if(isMale || isTall){
+	Console.WriteLine(“You are either not male or not tall”);
+}
+else{
+}
+```
+
+**Switch Statements**
+----------------
+Example of a switch statement
+
+```csharp
+string dayName;
+int dayNum = 0;
+switch(dayName){
+	case 0:
+		dayName = “Sunday”;
+		break;
+	case 1:
+		dayName = “Monday”;
+		break;
+	default:
+		dayName = “Invalid Day”;
+		break;
+}
+```
+
+**While Loops**
+------------
+Example of a while loop.
+
+```csharp
+int index = 1;
+while(index <= 5){
+	Console.WriteLine(index);
+	index++;
+}
+do{
+	Console.WriteLine(index);
+	index++;
+}while(index <= 5);
+```
+
+**For Loops**
+---------------
+Example of for loop.
+
+```csharp
+int[] luckyNumbers = {4, 8, 15, 16, 23, 42};
+for(int i = 0; i < luckyNumbers.length(); i++){
+	Console.WriteLine(luckyNumbers[i]);
+}
+```
+
+**Exception Handling**
+-----------------
+Try and catch block example.
+
+```csharp
+try{
+	Console.WriteLine(“Enter a number: ”);
+    int num1 = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine(“Enter another number: ”);
+    int num2 = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine(num1/num2);
+}
+catch(DivideByZeroException e){
+	Console.WriteLine(e.Message);
+}
+catch(FormatException){
+	Console.WriteLine(e.Message);
+}
+catch(Exception e){
+	Console.WriteLine(e.Message);
+}
+//Executed no matter what
+finally{
+    //Clean up
+}
+```
+
+**List**
+--------------
+Example of a list. Make sure to include this at the top: using Systems.Collections.Generic;
+
+```csharp
+//Here's an array to compare
+string[] food = new string[3];
+food[0] = “pizza”;
+food[1] = “ham”;
+food[2] = “hotdog”;
+foreach(String item in food){
+	Console.WriteLine(item);
+}
+
+//List
+List<String> food = new List<String>();
+food.Add(“pizza”);
+food.Add(“ham”);
+food.Add(“hotdog”);
+food.Add(“fries”);
+food.Remove(“fries”);
+food.Insert(0, “sushi”);
+food.Count;
+food.indexOf(“pizza”);
+food.LastIndexOf(“fries”);
+food.Contains(“pizza”); //true
+food.Sort(); //sorts alphabetically
+food.Reverse();
+food.Clear();
+//Initialize
+List<string> mylist = new List<string>(new string[] {"element1", "element2", "element3"});
+//Vector to array
+string[] foodArray = food.ToArray();
+```
+
+**List of List**
+-----------------
+2D List Examples
+
+```csharp
+List<List<string>> myList = new List<List<string>>();
+myList.Add(new List<string> { "a", "b" });
+myList.Add(new List<string> { "c", "d", "e" });
+myList.Add(new List<string> { "qwerty", "asdf", "zxcv" });
+myList.Add(new List<string> { "a", "b" });
+myList.AddRange(list2); //append another list
+//To iterate over it.
+foreach (List<string> subList in myList)
+{
+    foreach (string item in subList)
+    {
+        Console.WriteLine(item);
+    }
+}
+
+List<List<String>> strList = new List<List<String>>{ 
+    new List<String> {String.Empty, String.Empty},
+    new List<String> {String.Empty, String.Empty},
+    new List<String> {String.Empty, String.Empty},
+    new List<String> {String.Empty, String.Empty},
+};
+```
+
 **Form Controls, Labels, Textboxes**
 ------------------------------------
 We can assign and change the form controls on the go without needing to create a list.
@@ -37,6 +266,7 @@ if(checkBox1.Checked)
   //Do stuff
 }
 ```
+    
 **Textbox Enter Event**
 -----------------------------------
 Instead of checking user input upon a button press we can check user input by a key event press. Below is a section of the code where we check the user's input for a valid file path.
