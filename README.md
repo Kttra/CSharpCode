@@ -249,6 +249,174 @@ List<List<String>> strList = new List<List<String>>{
     new List<String> {String.Empty, String.Empty},
 };
 ```
+**Class**
+----------------
+Example of a class.
+Encapsulation - refers to an object's ability to hide data and behavior that are not necessary to its user
+Abstraction - the method of exposing only the required features of the class and hiding unncessary information
+
+```csharp
+class Animal{
+	//private - data can only be accessed inside the same class
+	//public - data can be accessed from other classes if we choose to reference the class
+	//static - not bound to an instance of the class, shared by all other instances
+	//Class variables
+	public static int Count = 0;
+	public string name;
+	public int age;
+	public float happiness;
+	//Class Constructors
+	public Animal(){
+		name = "Spot";
+		age = 6;
+		happiness = 0.5f;
+		Count++;
+	}
+	//Parameterized constructor
+	public Animal(string _name, int _age, float _happiness){
+		name = _name;
+		age = _age;
+		happiness = _happiness;
+		Count++;
+	}
+	static Animal(){
+	}
+	//Copy constructor
+	public Animal(Animal animal){
+		this.name = animal.name;
+		this.age = animal.age;
+		this.happiness = animal.happiness;
+		Count++;
+	}
+	//Destructor
+	~Animal(){
+		//Code to release resources
+	}
+	public void Print(){
+		Console.WriteLine("Name: " + name);
+		Console.WriteLine("Age: " + age);
+		Console.WriteLine("Happiness: " + happiness);
+	}
+}
+public static void Main()
+{	
+	Animal dog = new Animal();
+	dog.name = "Doggy";
+	dog.Print();
+	Animal cat = new Animal("Mr. Beans", 10, 0.8f);
+	cat.Print();
+}
+```
+Inheritance
+
+Here, we are inheriting the derived class Dog from the base class Animal. The Dog class can now access the fields and methods of Animal class.
+
+```charp
+class Animal {  
+  // fields and methods
+} 
+
+// Dog inherits from Animal
+class Dog : Animal {
+  // fields and methods of Animal 
+  // fields and methods of Dog 
+}
+```
+
+Polymorphism Compile Time
+
+```charp
+public class TestData  
+{  
+public int Add(int a, int b, int c)  
+{  
+    return a + b + c;  
+}  
+public int Add(int a, int b)  
+{  
+    return a + b;  
+}  
+}  
+class Program  
+{  
+	static void Main(string[] args)  
+	{  
+	    TestData dataClass = new TestData();  
+	    int add2 = dataClass.Add(45, 34, 67);  
+	    int add1 = dataClass.Add(23, 34);  
+	}  
+}  
+```
+
+Dynamic / Runtime Polymorphism
+
+```charp
+public class Drawing  
+{  
+	public virtual double Area()  
+	{  
+	     return 0;  
+	}  
+}  
+
+public class Circle : Drawing  
+{  
+	public double Radius { get; set; }  
+	public Circle()  
+	{  
+	    Radius = 5;  
+	}  
+	public override double Area()  
+	{  
+	    return (3.14) * Math.Pow(Radius, 2);  
+	}  
+}  
+
+public class Square : Drawing  
+{  
+	public double Length { get; set; }  
+	public Square()  
+	{  
+	    Length = 6;  
+	}  
+	public override double Area()  
+	{  
+	    return Math.Pow(Length, 2);  
+	}  
+}  
+
+public class Rectangle : Drawing  
+{  
+	public double Height { get; set; }  
+	public double Width { get; set; }  
+	public Rectangle()  
+	{  
+	    Height = 5.3;  
+	    Width = 3.4;  
+	}  
+	public override double Area()  
+	{  
+	    return Height * Width;  
+	}  
+}  
+
+class Program  
+{  
+	static void Main(string[] args)  
+	{  
+
+	    Drawing circle = new Circle();  
+	    Console.WriteLine("Area :" + circle.Area());  
+
+	    Drawing square = new Square();  
+	    Console.WriteLine("Area :" + square.Area());  
+
+	    Drawing rectangle = new Rectangle();  
+	    Console.WriteLine("Area :" + rectangle.Area());  
+	}  
+}  
+
+```
 
 **Ref vs out**
 -----------------------
