@@ -13,8 +13,6 @@ Console.WriteLine($"{num}");
 
 Console.Write(“Enter your name: ”); //Doesn’t create newline
 
-
-
 name = Console.ReadLine();
 Console.WriteLine(“Hello, ” + name);
 ```
