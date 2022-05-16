@@ -742,7 +742,8 @@ public int ReturnValue1 { get; set; }
 
 **Async Methods**
 -----------
-Delaying the task
+Delaying the task. An async method runs synchronously until it reaches its first await expression, at which point the method is suspended until the awaited task is complete.
+
 ```csharp
 private async void method1()
 {
@@ -805,7 +806,8 @@ else
 
 **Command Prompt**
 -----------------
-Run command prompt commands through a hidden console
+Run command prompt commands through a hidden console.
+
 ```csharp
 using System.Diagnostics;
 var proc1 = new ProcessStartInfo();
@@ -822,6 +824,7 @@ Process.Start(proc1);
 **Json Files in C#**
 -----------------------------------
 There are multiple ways to access and write information from and to a json file. The below code goes over two different ways.
+
 ```csharp
 string fileName = @"d:\Users\Username\Desktop\sampleAB2.json";
 if (File.Exists(fileName))
