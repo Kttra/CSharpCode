@@ -953,7 +953,7 @@ dataGridView1[8, 0].Value = "Row Name";
 dataGridView1.Rows.Clear();
 ```
 
-**Projects**
+**Other Helpful Projects**
 ------------
 [Regex Patterns](https://github.com/Kttra/RegexPatterns) - Details on regex expressions and patterns.
 
@@ -962,3 +962,7 @@ dataGridView1.Rows.Clear();
 [Input Validation](https://github.com/Kttra/ValidInput/blob/main/validInput.cs) - Code to check for valid input. Also includes examples of parsing and only allowing for specific input.
 
 [Json](https://github.com/Kttra/JsonGridLoader) - Project that reads and write to json files.
+
+[Data Structures](https://github.com/Kttra/DataStructuresCSharp) - Repo where I cover some data structures.
+
+[Random C# Programs](https://github.com/Kttra/RandomPrograms) - Random programs that may be helpful.
