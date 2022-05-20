@@ -762,6 +762,22 @@ private void textBox1_KeyUp(object sender, KeyEventArgs e)
     }
 }
 ```
+**Combobox**
+-----------------------
+```csharp
+//Set the default select state to the 1st index
+comboBox1.SelectedIndex = 0;
+
+
+//A way to add combobox items
+comboBox1.Items.Add("bmp");
+comboBox1.Items.Add("jpg");
+comboBox1.Items.Add("png");
+
+//Clear all
+comboBox1.Items.Clear();
+```
+
 **App Settings**
 -------------
 Changing the app settings and using them.
