@@ -286,7 +286,7 @@ finally{
 
 **List**
 --------------
-Example of a list. Make sure to include this at the top: using Systems.Collections.Generic;
+Example of a list. Make sure to include this at the top: using System.Collections.Generic;
 
 ```csharp
 //Here's an array to compare
@@ -300,16 +300,16 @@ foreach(String item in food){
 
 //List
 List<String> food = new List<String>();
-food.Add(“pizza”);
-food.Add(“ham”);
-food.Add(“hotdog”);
-food.Add(“fries”);
-food.Remove(“fries”);
-food.Insert(0, “sushi”);
-food.Count;
-food.indexOf(“pizza”);
-food.LastIndexOf(“fries”);
-food.Contains(“pizza”); //true
+food.Add("pizza");
+food.Add("ham");
+food.Add("hotdog");
+food.Add("fries");
+food.Remove("fries");
+food.Insert(0, "sushi");
+int length = food.Count;
+food.IndexOf("pizza");
+food.LastIndexOf("fries");
+food.Contains("pizza"); //true
 food.Sort(); //sorts alphabetically
 food.Reverse();
 food.Clear();
@@ -317,6 +317,11 @@ food.Clear();
 List<string> mylist = new List<string>(new string[] {"element1", "element2", "element3"});
 //Vector to array
 string[] foodArray = food.ToArray();
+//Checking if list is null
+if (food?.Any() != true) //using System.Linq;
+{
+	//Handle null or empty list
+}
 ```
 
 **List of List**
