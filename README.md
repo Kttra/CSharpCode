@@ -974,8 +974,10 @@ dataGridView1[8, 0].Value = "Row Name";
 dataGridView1.Rows.Clear();
 ```
 
-**Other Helpful Projects**
+**Links to Other Helpful Projects**
 ------------
+Here are some other C# projects that contain info on some more complicated concepts.
+
 [Regex Patterns](https://github.com/Kttra/RegexPatterns) - Details on regex expressions and patterns.
 
 [Random String/Num Generator](https://github.com/Kttra/RandomStringGenerator/blob/main/randomStringGenerator.cs) - Code to quickly generate random strings or numbers.
@@ -987,3 +989,5 @@ dataGridView1.Rows.Clear();
 [Data Structures](https://github.com/Kttra/DataStructuresCSharp) - Repo where I cover some data structures.
 
 [Random C# Programs](https://github.com/Kttra/RandomPrograms) - Random programs that may be helpful.
+
+[XML & IEnumerable](https://github.com/Kttra/IEnumerableXMLNotes) - Some quick notes on XElemenet and IEnumerable.
