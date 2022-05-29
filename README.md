@@ -976,7 +976,7 @@ dataGridView1.Rows.Clear();
 
 **Links to Other Helpful Projects**
 ------------
-Here are some other C# projects that contain info on some more complicated concepts.
+Here are some other C# projects that contain info on some more complicated concepts. As this project is more focused on showing the basics of C#, I felt that these other concepts warrant their own page.
 
 [Regex Patterns](https://github.com/Kttra/RegexPatterns) - Details on regex expressions and patterns.
 
@@ -988,6 +988,8 @@ Here are some other C# projects that contain info on some more complicated conce
 
 [Data Structures](https://github.com/Kttra/DataStructuresCSharp) - Repo where I cover some data structures.
 
-[Random C# Programs](https://github.com/Kttra/RandomPrograms) - Random programs that may be helpful.
+[Random C# Programs](https://github.com/Kttra/RandomPrograms) - Random C# programs.
 
 [XML & IEnumerable](https://github.com/Kttra/IEnumerableXMLNotes) - Some quick notes on XElemenet and IEnumerable.
+
+[Dictionary & Hashtables](https://github.com/Kttra/DictionaryHashNotes) - Some notes on Dictionaries and Hashtables.
