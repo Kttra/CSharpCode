@@ -993,3 +993,5 @@ Here are some other C# projects that contain info on some more complicated conce
 [XML & IEnumerable](https://github.com/Kttra/IEnumerableXMLNotes) - Some quick notes on XElemenet and IEnumerable.
 
 [Dictionary & Hashtables](https://github.com/Kttra/DictionaryHashNotes) - Some notes on Dictionaries and Hashtables.
+
+[Unit Testing](https://github.com/Kttra/xUnitExample) - A project that explains how to set up unit testing for visual studio projects (using both XUnit and MSTest).
