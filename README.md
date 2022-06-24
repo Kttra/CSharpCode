@@ -621,6 +621,30 @@ public readonly int myVal;
 public const int myVal2 = 1;
 ```
 
+**Lambda expressions**
+--------------------
+You use a lambda expression to create an anonymous function.
+```csharp
+(input-parameters) => expression
+(input-parameters) => { <sequence-of-statements> }
+```
+
+**Ternary Conditional Operator**
+-----------------
+The conditional operator "? :",known as the ternary conditional operator, evaluates a boolean expression and returns the result of one of the two expressions, depending on whether the Boolean expression evaluates to true or false. The format of the ternary operator can be seen below. On the left we have a boolean expression followed by two values. The resulting value will be the one on the left if the expression is true, otherwise the right side will be the resulting value.
+
+```csharp
+string name = "   ";
+name = string.IsNullOrWhiteSpace(name) ? "Empty":"Not Empty"; //name will become "Empty"
+bool condition = 0.1 > 0.5;
+int? x = condition ? 12 : null; //Becomes null 
+```
+
+It is possible to combine the ternary operator with a lambda expression to form shorter functions/methods.
+```csharp
+string GetWeatherDisplay(double tempInCelsius) => tempInCelsius < 20.0 ? "Cold." : "Perfect!";
+```
+
 **String Builder**
 -----------------
 In C#, strings are immutable. To solve the problem, C# introduces the StringBuilder in the System.Text namespace. StringBuilder does not create a new object in memory, instead it dynamically expands memory to accomodate the modified string.
