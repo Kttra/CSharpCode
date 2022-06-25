@@ -841,23 +841,13 @@ Form 1
 ```csharp
 private void Btn_Click(object sender, EventArgs e)
 {
-  using var form = new startIndex();
-  var result = form.ShowDialog();
+  //Open the 2nd form
+  using var form2 = new startIndex();
+  var result = form2.ShowDialog();
   if (result == DialogResult.OK)
   {
-      //Our starting listing number
-      int startingIndex = form.ReturnValue1;
-
-      //Removes any existing numbers
-      EditedTextBox.Text = Regex.Replace(EditedTextBox.Text, @"[0-9][.]", ""); //Removes #. (Ex: 1.)
-      EditedTextBox.Text = Regex.Replace(EditedTextBox.Text, @"[0-9]", ""); //Removes #'s
-
-      string[] lines = EditedTextBox.Lines;
-      for (int i = 0; i < lines.Length; i++, startingIndex++)
-      {
-          lines[i] = (startingIndex) + ". " + lines[i].Trim();
-      }
-      EditedTextBox.Lines = lines;
+      //Do stuff with the value received from form2
+      int startingIndex = form2.ReturnValue1;
   }
 }
 ```
