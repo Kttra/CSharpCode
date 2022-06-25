@@ -862,6 +862,46 @@ private void foo()
 public int ReturnValue1 { get; set; }
 ```
 
+**Calling Function/Method from Another Form**
+-----
+```csharp
+
+namespace F1
+{
+    // Method defined in this class
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        //This method will be called from another form
+        public void function()
+        {
+            MessageBox.Show("Hello");
+        }
+        //Opening the new form using button click
+        private void OpenNewForm_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.ShowDialog();
+        }
+    } 
+    // This is second form
+    public partial class Form2: Form
+    {
+        public Form2()
+        {
+            InitializeComponent();
+        }
+        // on button click Form1 method will be called
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var mainForm = Application.OpenForms.OfType<Form1>().Single();
+            mainForm.function();
+        }
+```
+
 **Async Methods**
 -----------
 Delaying the task. An async method runs synchronously until it reaches its first await expression, at which point the method is suspended until the awaited task is complete.
