@@ -1032,22 +1032,22 @@ dataGridView1.Rows.Clear();
 ------------
 Here are some other C# projects that contain info on some more complicated concepts. As this project is more focused on showing the basics of C#, I felt that these other concepts warrant their own page.
 
-[Regex Patterns](https://github.com/Kttra/RegexPatterns) - Details on regex expressions and patterns.
+[Data Structures](https://github.com/Kttra/DataStructuresCSharp) - Repo where I cover some data structures.
 
-[Random String/Num Generator](https://github.com/Kttra/RandomStringGenerator/blob/main/randomStringGenerator.cs) - Code to quickly generate random strings or numbers.
+[Dictionary & Hashtables](https://github.com/Kttra/DictionaryHashNotes) - Some notes on Dictionaries and Hashtables.
+
+[Git Overview](https://github.com/Kttra/GitOverview) - An overview on git commands and some details on using sourcetree.
 
 [Input Validation](https://github.com/Kttra/ValidInput/blob/main/validInput.cs) - Code to check for valid input. Also includes examples of parsing and only allowing for specific input.
 
 [Json](https://github.com/Kttra/JsonGridLoader) - Project that reads and write to json files.
 
-[Data Structures](https://github.com/Kttra/DataStructuresCSharp) - Repo where I cover some data structures.
-
 [Random C# Programs](https://github.com/Kttra/RandomPrograms) - Random C# programs.
 
-[XML & IEnumerable](https://github.com/Kttra/IEnumerableXMLNotes) - Some quick notes on XElemenet and IEnumerable.
+[Random String/Num Generator](https://github.com/Kttra/RandomStringGenerator/blob/main/randomStringGenerator.cs) - Code to quickly generate random strings or numbers.
 
-[Dictionary & Hashtables](https://github.com/Kttra/DictionaryHashNotes) - Some notes on Dictionaries and Hashtables.
+[Regex Patterns](https://github.com/Kttra/RegexPatterns) - Details on regex expressions and patterns.
 
 [Unit Testing](https://github.com/Kttra/xUnitExample) - A project that explains how to set up unit testing for visual studio projects (using both XUnit and MSTest).
 
-[Git Overview](https://github.com/Kttra/GitOverview) - An overview on git commands and some details on using sourcetree.
+[XML & IEnumerable](https://github.com/Kttra/IEnumerableXMLNotes) - Some quick notes on XElemenet and IEnumerable.
