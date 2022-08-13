@@ -413,46 +413,50 @@ Inheritance
 
 Here, we are inheriting the derived class Dog from the base class Animal. The Dog class can now access the fields and methods of Animal class.
 
-```charp
-class Animal {  
+```csharp
+public class Animal
+{  
   // fields and methods
-} 
+}
 
 // Dog inherits from Animal
-class Dog : Animal {
+public class Dog : Animal
+{
   // fields and methods of Animal 
   // fields and methods of Dog 
 }
 ```
 
-Polymorphism Compile Time
+Polymorphism at Compile Time
 
-```charp
-public class TestData  
-{  
-public int Add(int a, int b, int c)  
-{  
-    return a + b + c;  
-}  
-public int Add(int a, int b)  
-{  
-    return a + b;  
-}  
-}  
-class Program  
-{  
-	static void Main(string[] args)  
-	{  
-	    TestData dataClass = new TestData();  
-	    int add2 = dataClass.Add(45, 34, 67);  
-	    int add1 = dataClass.Add(23, 34);  
-	}  
-}  
+```csharp 
+public class Program
+{
+	public static void Main()
+	{
+		TestData dataClass = new TestData();
+		int add3 = dataClass.Add(1, 2, 3); //6
+		int add2 = dataClass.Add(1, 2); //3
+		Console.WriteLine($"add2 results: {add2}\nadd3 results: {add3}");
+	}
+}
+
+public class TestData
+{
+	public int Add(int a, int b, int c)
+	{
+		return a + b + c;
+	}
+	public int Add(int a, int b)
+	{
+		return a + b;
+	}
+}
 ```
 
 Dynamic/Runtime Polymorphism
 
-```charp
+```csharp
 public class Drawing  
 {  
 	public virtual double Area()  
@@ -500,11 +504,11 @@ public class Rectangle : Drawing
 	{  
 	    return Height * Width;  
 	}  
-}  
+}
 
-class Program  
+public class Program  
 {  
-	static void Main(string[] args)  
+	public static void Main(string[] args)  
 	{  
 
 	    Drawing circle = new Circle();  
